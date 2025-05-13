@@ -63,9 +63,59 @@ namespace LuxeLane.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ajustes_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ajustes-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ajustes_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ajustes-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_asistente_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-asistente-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_campana_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-campana-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cerrar_ventana_30__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-cerrar-ventana-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_dinero_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dinero-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +166,36 @@ namespace LuxeLane.Properties {
         internal static System.Drawing.Bitmap icons8_menos_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menos-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_settings_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-settings-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_themes_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-themes-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_themes_78 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-themes-78", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -106,16 +106,21 @@ namespace LuxeLane
         {
             using (var dbcontext = new LuxeLaneContext())
             {
-                var lista = dbcontext.Productos.Where(x => x.NombreProducto == guna2TextBox1.Text).ToList();
-                if (guna2TextBox1.Text is "")
+                string textoBusqueda = guna2TextBox1.Text.ToLower();
+
+                if (string.IsNullOrWhiteSpace(textoBusqueda))
                 {
                     InsertarDatosEnElGrid();
                     return;
                 }
-                   
-                dataGridView1.DataSource = lista;
 
+                var lista = dbcontext.Productos
+                    .Where(x => x.NombreProducto.ToLower().Contains(textoBusqueda))
+                    .ToList();
+
+                dataGridView1.DataSource = lista;
             }
+
         }
     }
 }

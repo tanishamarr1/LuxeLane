@@ -62,6 +62,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            label11 = new Label();
             guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -101,6 +102,7 @@
             // 
             guna2ShadowPanel1.AutoScroll = true;
             guna2ShadowPanel1.BackColor = Color.Transparent;
+            guna2ShadowPanel1.Controls.Add(label11);
             guna2ShadowPanel1.Controls.Add(guna2CircleButton3);
             guna2ShadowPanel1.Controls.Add(guna2CircleButton2);
             guna2ShadowPanel1.Controls.Add(guna2CircleButton1);
@@ -125,6 +127,16 @@
             guna2ShadowPanel1.Size = new Size(621, 871);
             guna2ShadowPanel1.TabIndex = 2;
             guna2ShadowPanel1.Paint += guna2ShadowPanel1_Paint;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label11.Location = new Point(34, 24);
+            label11.Name = "label11";
+            label11.Size = new Size(290, 37);
+            label11.TabIndex = 15;
+            label11.Text = "LISTA DE PRODUCTOS";
             // 
             // guna2CircleButton3
             // 
@@ -480,7 +492,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.Location = new Point(516, 622);
+            label10.Location = new Point(508, 622);
             label10.Name = "label10";
             label10.Size = new Size(71, 20);
             label10.TabIndex = 20;
@@ -498,7 +510,7 @@
             // 
             // txtPago
             // 
-            txtPago.BorderRadius = 9;
+            txtPago.BorderRadius = 2;
             txtPago.CustomizableEdges = customizableEdges16;
             txtPago.DefaultText = "";
             txtPago.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -508,13 +520,14 @@
             txtPago.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPago.Font = new Font("Segoe UI", 9F);
             txtPago.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPago.Location = new Point(259, 612);
+            txtPago.Location = new Point(260, 612);
             txtPago.Name = "txtPago";
             txtPago.PasswordChar = '\0';
             txtPago.PlaceholderText = "";
             txtPago.SelectedText = "";
             txtPago.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPago.Size = new Size(117, 36);
+            txtPago.Size = new Size(149, 48);
+            txtPago.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             txtPago.TabIndex = 18;
             txtPago.TextChanged += txtPago_TextChanged;
             // 
@@ -528,15 +541,19 @@
             txtDevuelta.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtDevuelta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDevuelta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDevuelta.Font = new Font("Segoe UI", 9F);
+            txtDevuelta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtDevuelta.ForeColor = Color.Red;
             txtDevuelta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDevuelta.Location = new Point(593, 613);
+            txtDevuelta.IconRight = Properties.Resources.icons8_dinero_30;
+            txtDevuelta.Location = new Point(586, 612);
+            txtDevuelta.Margin = new Padding(4, 4, 4, 4);
             txtDevuelta.Name = "txtDevuelta";
             txtDevuelta.PasswordChar = '\0';
             txtDevuelta.PlaceholderText = "";
             txtDevuelta.SelectedText = "";
             txtDevuelta.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            txtDevuelta.Size = new Size(117, 36);
+            txtDevuelta.Size = new Size(124, 48);
+            txtDevuelta.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             txtDevuelta.TabIndex = 17;
             txtDevuelta.TextChanged += txtDevuelta_TextChanged;
             // 
@@ -706,5 +723,6 @@
         private Label label9;
         private Guna.UI2.WinForms.Guna2TextBox txtPago;
         private Guna.UI2.WinForms.Guna2TextBox txtDevuelta;
+        private Label label11;
     }
 }
