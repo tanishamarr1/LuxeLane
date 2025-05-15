@@ -42,15 +42,13 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // subjectTextBox
             // 
-            subjectTextBox.Location = new Point(190, 370);
+            subjectTextBox.Location = new Point(190, 322);
             subjectTextBox.Multiline = true;
             subjectTextBox.Name = "subjectTextBox";
             subjectTextBox.Size = new Size(279, 83);
@@ -58,7 +56,7 @@
             // 
             // msgTextBox
             // 
-            msgTextBox.Location = new Point(190, 482);
+            msgTextBox.Location = new Point(190, 434);
             msgTextBox.Multiline = true;
             msgTextBox.Name = "msgTextBox";
             msgTextBox.Size = new Size(279, 82);
@@ -66,14 +64,14 @@
             // 
             // nombreUsuariolTextBox
             // 
-            nombreUsuariolTextBox.Location = new Point(190, 266);
+            nombreUsuariolTextBox.Location = new Point(190, 218);
             nombreUsuariolTextBox.Name = "nombreUsuariolTextBox";
             nombreUsuariolTextBox.Size = new Size(279, 23);
             nombreUsuariolTextBox.TabIndex = 3;
             // 
             // emailUsuarioTextBox
             // 
-            emailUsuarioTextBox.Location = new Point(190, 313);
+            emailUsuarioTextBox.Location = new Point(190, 265);
             emailUsuarioTextBox.Name = "emailUsuarioTextBox";
             emailUsuarioTextBox.Size = new Size(279, 23);
             emailUsuarioTextBox.TabIndex = 4;
@@ -82,7 +80,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(99, 266);
+            label1.Location = new Point(99, 218);
             label1.Name = "label1";
             label1.Size = new Size(75, 20);
             label1.TabIndex = 5;
@@ -92,7 +90,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(96, 509);
+            label2.Location = new Point(96, 461);
             label2.Name = "label2";
             label2.Size = new Size(78, 20);
             label2.TabIndex = 6;
@@ -102,7 +100,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(99, 398);
+            label3.Location = new Point(99, 350);
             label3.Name = "label3";
             label3.Size = new Size(73, 20);
             label3.TabIndex = 7;
@@ -112,7 +110,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(119, 314);
+            label4.Location = new Point(119, 266);
             label4.Name = "label4";
             label4.Size = new Size(55, 20);
             label4.TabIndex = 8;
@@ -148,7 +146,7 @@
             guna2Button1.FillColor = Color.FromArgb(223, 132, 159);
             guna2Button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(136, 607);
+            guna2Button1.Location = new Point(136, 565);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(273, 58);
@@ -156,23 +154,12 @@
             guna2Button1.Text = "ENVIAR";
             guna2Button1.Click += guna2Button1_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.icons8_asistente_50;
-            pictureBox2.Location = new Point(204, 169);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(123, 81);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
-            // 
             // Contacto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(549, 701);
-            Controls.Add(pictureBox2);
             Controls.Add(guna2Button1);
             Controls.Add(panel1);
             Controls.Add(label4);
@@ -189,7 +176,6 @@
             Load += Contacto_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,6 +192,5 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private PictureBox pictureBox2;
     }
 }
