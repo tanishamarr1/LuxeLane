@@ -98,11 +98,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(295, 360);
+            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             Controls.Add(chkTemaOscuro);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "CambiarTema";
             StartPosition = FormStartPosition.Manual;
             Text = "CambiarTema";

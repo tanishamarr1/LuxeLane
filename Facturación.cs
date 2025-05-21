@@ -25,15 +25,12 @@ namespace LuxeLane
             InsertarDatosEnElGrid();
             InsertarDatosProductos();
             InsertarCategorias();
-
-
-
         }
         private Config rutaclase = new Config { Id = 1, RutaGuardarFacturas = @"C:\Facturas Luxe" };
         private const int IdRutaExistente = 1;
         private string? rutaAlPdf;
         List<OrdenTicket> productosComprados = new();
-
+        public static Facturación _instance;
         void CalcularTotal()
         {
 
@@ -43,10 +40,7 @@ namespace LuxeLane
             txtTotalsh.Text = total.ToString();
 
         }
-
-
-
-
+        
         void InsertarDatosProductos()
         {
             using (var dbcontext = new LuxeLaneContext())
