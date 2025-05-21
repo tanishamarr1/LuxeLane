@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Tulpep.NotificationWindow;
 
 namespace LuxeLane
 {
@@ -59,8 +60,9 @@ namespace LuxeLane
         {
             using (var dbcontext = new LuxeLaneContext())
             {
-                var listaClientes = dbcontext.Facturas.ToList();
-                DetallesFacturaGrid.DataSource = listaClientes;
+                var invoiceDetails = dbcontext.Facturas.ToList();
+                DetallesFacturaGrid.DataSource = invoiceDetails;
+
             }
         }
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
@@ -236,7 +238,7 @@ namespace LuxeLane
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            using var dbcontext = new LuxeLaneContext();
             var factura = new Factura
             {
 
@@ -246,10 +248,35 @@ namespace LuxeLane
                 FechaVenta = DateTime.Now,
             };
 
-            using var dbcomtext = new LuxeLaneContext();
+            var restQty = CantidadNumeric.Value;
+            var idProducto = comboIdProducto!.SelectedItem!.ToString();
+            int idprod = Convert.ToInt32(idProducto);
+            var producto = dbcontext.Productos.Find(idprod);
+            if (producto != null)
+            {
+                producto.Qty -= restQty;
+                dbcontext.SaveChanges();
+            }
+            if (producto!.Qty < 10)
+            {
+                var noti = new PopupNotifier();
+                noti.TitleText = "Stock bajo";
+                noti.TitleFont = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
+                noti.TitleColor = Color.Red;
+                noti.ContentFont = new System.Drawing.Font("Arial", 10, FontStyle.Regular);
+                noti.ContentText = $"El producto {producto.NombreProducto} tiene bajo stock";
+                noti.ContentPadding = new Padding(10);
+                noti.Popup();
+                var notification = new Notifications
+                {
+                    Title = "Stock bajo",
+                    Message = $"El producto {producto.NombreProducto} tiene stock bajo",
+                };
+                dbcontext.Notifications.Add(notification);
+            }
 
-            dbcomtext.Facturas.Add(factura);
-            dbcomtext.SaveChanges();
+            dbcontext.Facturas.Add(factura);
+            dbcontext.SaveChanges();
 
             InsertarDatosEnElGrid();
             GuardarPdf();
@@ -288,6 +315,26 @@ namespace LuxeLane
             long pago = Convert.ToInt64(txtPago.Text);
             long resultado = pago - total;
             txtDevuelta.Text = resultado.ToString();
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (var dbcontext = new LuxeLaneContext())
+            {
+                string textoBusqueda = guna2TextBox1.Text.ToLower();
+
+                if (string.IsNullOrWhiteSpace(textoBusqueda))
+                {
+                    InsertarDatosEnElGrid();
+                    return;
+                }
+
+                var lista = dbcontext.Productos
+                    .Where(x => x.NombreProducto.ToLower().Contains(textoBusqueda))
+                    .ToList();
+
+                DATAGRID1.DataSource = lista;
+            }
         }
     }
 }

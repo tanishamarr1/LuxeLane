@@ -22,7 +22,7 @@ namespace LuxeLane
 
             }
         }
-    
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -41,14 +41,10 @@ namespace LuxeLane
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox1.Checked == true)
-            {
-                TxContraseña.UseSystemPasswordChar = false;
-            }
+            if (guna2CheckBox1.Checked)
+                TxContraseña.PasswordChar = '\0'; 
             else
-            {
-                TxContraseña.UseSystemPasswordChar = true;
-            }
+                TxContraseña.PasswordChar = '*';  
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -86,6 +82,11 @@ namespace LuxeLane
 
             }
         }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 

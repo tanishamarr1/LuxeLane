@@ -315,10 +315,10 @@
             PanelCategorias.Controls.Add(guna2ImageButton1);
             PanelCategorias.Dock = DockStyle.Right;
             PanelCategorias.FillColor = Color.White;
-            PanelCategorias.Location = new Point(1241, 0);
+            PanelCategorias.Location = new Point(1260, 0);
             PanelCategorias.Name = "PanelCategorias";
             PanelCategorias.ShadowColor = Color.Black;
-            PanelCategorias.Size = new Size(551, 960);
+            PanelCategorias.Size = new Size(532, 960);
             PanelCategorias.TabIndex = 10;
             // 
             // pictureBox1

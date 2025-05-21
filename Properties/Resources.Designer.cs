@@ -113,6 +113,26 @@ namespace LuxeLane.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_contraseña_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-contraseña-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_data_engineering_tools_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-data-engineering-tools-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_dinero_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dinero-30", resourceCulture);

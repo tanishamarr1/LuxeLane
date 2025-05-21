@@ -107,10 +107,11 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.Location = new Point(31, 47);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1472, 601);
+            dataGridView1.Size = new Size(1549, 714);
             dataGridView1.TabIndex = 0;
             dataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Pink;
             dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -182,7 +183,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button3.Location = new Point(200, 808);
+            button3.Location = new Point(180, 811);
             button3.Name = "button3";
             button3.Size = new Size(126, 43);
             button3.TabIndex = 43;
@@ -193,7 +194,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button2.Location = new Point(348, 808);
+            button2.Location = new Point(328, 811);
             button2.Name = "button2";
             button2.Size = new Size(121, 43);
             button2.TabIndex = 42;
@@ -204,7 +205,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button1.Location = new Point(43, 808);
+            button1.Location = new Point(23, 811);
             button1.Name = "button1";
             button1.Size = new Size(133, 43);
             button1.TabIndex = 41;

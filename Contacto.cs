@@ -68,5 +68,10 @@ namespace LuxeLane
         {
             SendEmailAsync();
         }
+
+        private void nombreUsuariolTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

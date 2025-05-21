@@ -41,7 +41,7 @@
             // 
             chkTemaOscuro.AutoSize = true;
             chkTemaOscuro.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            chkTemaOscuro.Location = new Point(87, 238);
+            chkTemaOscuro.Location = new Point(52, 248);
             chkTemaOscuro.Name = "chkTemaOscuro";
             chkTemaOscuro.Size = new Size(177, 34);
             chkTemaOscuro.TabIndex = 1;
@@ -52,7 +52,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.icons8_themes_78;
-            pictureBox1.Location = new Point(106, 115);
+            pictureBox1.Location = new Point(71, 125);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(153, 105);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -66,7 +66,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(370, 39);
+            panel1.Size = new Size(295, 39);
             panel1.TabIndex = 3;
             // 
             // button7
@@ -75,7 +75,7 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Image = Properties.Resources.icons8_cerrar_ventana_30__1_;
-            button7.Location = new Point(310, 0);
+            button7.Location = new Point(235, 0);
             button7.Name = "button7";
             button7.Size = new Size(60, 39);
             button7.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(87, 80);
+            label1.Location = new Point(52, 90);
             label1.Name = "label1";
             label1.Size = new Size(186, 32);
             label1.TabIndex = 4;
@@ -97,7 +97,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(370, 314);
+            ClientSize = new Size(295, 360);
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);

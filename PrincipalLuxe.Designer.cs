@@ -30,12 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalLuxe));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
+            BtnConfiguracion = new Button();
+            BtnCambiarTema = new Button();
             panel4 = new Panel();
             pictureBox2 = new PictureBox();
             label1 = new Label();
@@ -48,20 +47,15 @@
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             panel3 = new Panel();
+            limpiarNotisBtn = new Button();
             button3 = new Button();
             button9 = new Button();
             labelFecha = new Label();
             button8 = new Button();
             button7 = new Button();
             PanelFormularios = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            PanelTemas = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            pictureBox4 = new PictureBox();
-            guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            chkTemaOscuro = new CheckBox();
-            label2 = new Label();
             pictureBox3 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
-            notifyIcon1 = new NotifyIcon(components);
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -69,16 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             PanelFormularios.SuspendLayout();
-            PanelTemas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(229, 136, 164);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(BtnConfiguracion);
+            panel1.Controls.Add(BtnCambiarTema);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(btnFacturacion);
             panel1.Controls.Add(btnUsuarios);
@@ -90,47 +82,47 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(277, 852);
+            panel1.Size = new Size(250, 852);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // button1
+            // BtnConfiguracion
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.CheckedBackColor = Color.FromArgb(229, 206, 212);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(229, 206, 212);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.icons8_settings_40;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 576);
-            button1.Name = "button1";
-            button1.Size = new Size(277, 62);
-            button1.TabIndex = 13;
-            button1.Text = "CONFIGURACIÓN";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            BtnConfiguracion.Dock = DockStyle.Top;
+            BtnConfiguracion.FlatAppearance.BorderSize = 0;
+            BtnConfiguracion.FlatAppearance.CheckedBackColor = Color.FromArgb(229, 206, 212);
+            BtnConfiguracion.FlatAppearance.MouseOverBackColor = Color.FromArgb(229, 206, 212);
+            BtnConfiguracion.FlatStyle = FlatStyle.Flat;
+            BtnConfiguracion.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic);
+            BtnConfiguracion.ForeColor = Color.White;
+            BtnConfiguracion.Image = Properties.Resources.icons8_settings_40;
+            BtnConfiguracion.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnConfiguracion.Location = new Point(0, 576);
+            BtnConfiguracion.Name = "BtnConfiguracion";
+            BtnConfiguracion.Size = new Size(250, 62);
+            BtnConfiguracion.TabIndex = 13;
+            BtnConfiguracion.Text = "CONFIGURACIÓN";
+            BtnConfiguracion.UseVisualStyleBackColor = true;
+            BtnConfiguracion.Click += button1_Click_1;
             // 
-            // button2
+            // BtnCambiarTema
             // 
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.CheckedBackColor = Color.FromArgb(229, 206, 212);
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(229, 206, 212);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic);
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.icons8_themes_40;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(0, 514);
-            button2.Name = "button2";
-            button2.Size = new Size(277, 62);
-            button2.TabIndex = 12;
-            button2.Text = "CAMBIAR TEMA";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
+            BtnCambiarTema.Dock = DockStyle.Top;
+            BtnCambiarTema.FlatAppearance.BorderSize = 0;
+            BtnCambiarTema.FlatAppearance.CheckedBackColor = Color.FromArgb(229, 206, 212);
+            BtnCambiarTema.FlatAppearance.MouseOverBackColor = Color.FromArgb(229, 206, 212);
+            BtnCambiarTema.FlatStyle = FlatStyle.Flat;
+            BtnCambiarTema.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic);
+            BtnCambiarTema.ForeColor = Color.White;
+            BtnCambiarTema.Image = Properties.Resources.icons8_themes_40;
+            BtnCambiarTema.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnCambiarTema.Location = new Point(0, 514);
+            BtnCambiarTema.Name = "BtnCambiarTema";
+            BtnCambiarTema.Size = new Size(250, 62);
+            BtnCambiarTema.TabIndex = 12;
+            BtnCambiarTema.Text = "CAMBIAR TEMA";
+            BtnCambiarTema.UseVisualStyleBackColor = true;
+            BtnCambiarTema.Click += button2_Click_1;
             // 
             // panel4
             // 
@@ -139,7 +131,7 @@
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(0, 783);
             panel4.Name = "panel4";
-            panel4.Size = new Size(277, 69);
+            panel4.Size = new Size(250, 69);
             panel4.TabIndex = 11;
             // 
             // pictureBox2
@@ -162,6 +154,7 @@
             label1.Size = new Size(150, 31);
             label1.TabIndex = 10;
             label1.Text = "USERNAME";
+            label1.Click += label1_Click;
             // 
             // btnFacturacion
             // 
@@ -176,7 +169,7 @@
             btnFacturacion.ImageAlign = ContentAlignment.MiddleLeft;
             btnFacturacion.Location = new Point(0, 452);
             btnFacturacion.Name = "btnFacturacion";
-            btnFacturacion.Size = new Size(277, 62);
+            btnFacturacion.Size = new Size(250, 62);
             btnFacturacion.TabIndex = 7;
             btnFacturacion.Text = "FACTURACIÓN";
             btnFacturacion.UseVisualStyleBackColor = true;
@@ -195,7 +188,7 @@
             btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
             btnUsuarios.Location = new Point(0, 390);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(277, 62);
+            btnUsuarios.Size = new Size(250, 62);
             btnUsuarios.TabIndex = 6;
             btnUsuarios.Text = "USUARIOS";
             btnUsuarios.UseVisualStyleBackColor = true;
@@ -214,7 +207,7 @@
             btnProductos.ImageAlign = ContentAlignment.MiddleLeft;
             btnProductos.Location = new Point(0, 328);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(277, 62);
+            btnProductos.Size = new Size(250, 62);
             btnProductos.TabIndex = 5;
             btnProductos.Text = "PRODUCTOS";
             btnProductos.UseVisualStyleBackColor = true;
@@ -233,7 +226,7 @@
             btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
             btnClientes.Location = new Point(0, 266);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(277, 62);
+            btnClientes.Size = new Size(250, 62);
             btnClientes.TabIndex = 4;
             btnClientes.Text = "CLIENTES";
             btnClientes.UseVisualStyleBackColor = true;
@@ -252,7 +245,7 @@
             btnStock.ImageAlign = ContentAlignment.MiddleLeft;
             btnStock.Location = new Point(0, 204);
             btnStock.Name = "btnStock";
-            btnStock.Size = new Size(277, 62);
+            btnStock.Size = new Size(250, 62);
             btnStock.TabIndex = 3;
             btnStock.Text = "STOCK";
             btnStock.UseVisualStyleBackColor = true;
@@ -271,7 +264,7 @@
             btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
             btnDashboard.Location = new Point(0, 142);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(277, 62);
+            btnDashboard.Size = new Size(250, 62);
             btnDashboard.TabIndex = 2;
             btnDashboard.Text = "DASHBOARD";
             btnDashboard.UseVisualStyleBackColor = true;
@@ -283,7 +276,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(277, 142);
+            panel2.Size = new Size(250, 142);
             panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -292,7 +285,7 @@
             pictureBox1.Image = Properties.Resources.LOGO_LUXELANE_removebg_preview;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(277, 142);
+            pictureBox1.Size = new Size(250, 142);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -300,16 +293,30 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(229, 136, 164);
+            panel3.Controls.Add(limpiarNotisBtn);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(button9);
             panel3.Controls.Add(labelFecha);
             panel3.Controls.Add(button8);
             panel3.Controls.Add(button7);
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(277, 0);
+            panel3.Location = new Point(250, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1530, 39);
+            panel3.Size = new Size(1557, 39);
             panel3.TabIndex = 1;
+            // 
+            // limpiarNotisBtn
+            // 
+            limpiarNotisBtn.FlatStyle = FlatStyle.Flat;
+            limpiarNotisBtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            limpiarNotisBtn.ForeColor = Color.White;
+            limpiarNotisBtn.Location = new Point(58, 6);
+            limpiarNotisBtn.Name = "limpiarNotisBtn";
+            limpiarNotisBtn.Size = new Size(193, 28);
+            limpiarNotisBtn.TabIndex = 5;
+            limpiarNotisBtn.Text = "Limpiar Notificaciones";
+            limpiarNotisBtn.UseVisualStyleBackColor = true;
+            limpiarNotisBtn.Click += limpiarNotisBtn_Click;
             // 
             // button3
             // 
@@ -322,6 +329,7 @@
             button3.Size = new Size(43, 39);
             button3.TabIndex = 3;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // button9
             // 
@@ -329,7 +337,7 @@
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Image = Properties.Resources.icons8_menos_30;
-            button9.Location = new Point(1386, 0);
+            button9.Location = new Point(1413, 0);
             button9.Name = "button9";
             button9.Size = new Size(43, 39);
             button9.TabIndex = 2;
@@ -341,7 +349,7 @@
             labelFecha.AutoSize = true;
             labelFecha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelFecha.ForeColor = Color.White;
-            labelFecha.Location = new Point(49, 9);
+            labelFecha.Location = new Point(728, 6);
             labelFecha.Name = "labelFecha";
             labelFecha.Size = new Size(67, 25);
             labelFecha.TabIndex = 0;
@@ -353,7 +361,7 @@
             button8.FlatAppearance.BorderSize = 0;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Image = Properties.Resources.icons8_maximizar_30;
-            button8.Location = new Point(1429, 0);
+            button8.Location = new Point(1456, 0);
             button8.Name = "button8";
             button8.Size = new Size(41, 39);
             button8.TabIndex = 1;
@@ -366,7 +374,7 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Image = Properties.Resources.icons8_cerrar_ventana_30__1_;
-            button7.Location = new Point(1470, 0);
+            button7.Location = new Point(1497, 0);
             button7.Name = "button7";
             button7.Size = new Size(60, 39);
             button7.TabIndex = 0;
@@ -375,80 +383,15 @@
             // 
             // PanelFormularios
             // 
-            PanelFormularios.Controls.Add(PanelTemas);
             PanelFormularios.Controls.Add(pictureBox3);
-            PanelFormularios.CustomizableEdges = customizableEdges2;
+            PanelFormularios.CustomizableEdges = customizableEdges3;
             PanelFormularios.Dock = DockStyle.Fill;
-            PanelFormularios.Location = new Point(277, 39);
+            PanelFormularios.Location = new Point(250, 39);
             PanelFormularios.Name = "PanelFormularios";
-            PanelFormularios.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            PanelFormularios.Size = new Size(1530, 813);
+            PanelFormularios.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            PanelFormularios.Size = new Size(1557, 813);
             PanelFormularios.TabIndex = 8;
             PanelFormularios.Paint += guna2CustomGradientPanel1_Paint;
-            // 
-            // PanelTemas
-            // 
-            PanelTemas.BackColor = Color.Transparent;
-            PanelTemas.Controls.Add(pictureBox4);
-            PanelTemas.Controls.Add(guna2ImageButton1);
-            PanelTemas.Controls.Add(chkTemaOscuro);
-            PanelTemas.Controls.Add(label2);
-            PanelTemas.FillColor = Color.White;
-            PanelTemas.Location = new Point(21, 227);
-            PanelTemas.Name = "PanelTemas";
-            PanelTemas.ShadowColor = Color.Black;
-            PanelTemas.Size = new Size(309, 310);
-            PanelTemas.TabIndex = 2;
-            PanelTemas.Visible = false;
-            PanelTemas.Paint += PanelTemas_Paint;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.icons8_themes_78;
-            pictureBox4.Location = new Point(111, 146);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(78, 78);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
-            // 
-            // guna2ImageButton1
-            // 
-            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
-            guna2ImageButton1.ImageOffset = new Point(0, 0);
-            guna2ImageButton1.ImageRotate = 0F;
-            guna2ImageButton1.Location = new Point(19, 37);
-            guna2ImageButton1.Name = "guna2ImageButton1";
-            guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2ImageButton1.Size = new Size(39, 34);
-            guna2ImageButton1.TabIndex = 2;
-            guna2ImageButton1.Click += guna2ImageButton1_Click;
-            // 
-            // chkTemaOscuro
-            // 
-            chkTemaOscuro.AutoSize = true;
-            chkTemaOscuro.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            chkTemaOscuro.Location = new Point(70, 248);
-            chkTemaOscuro.Name = "chkTemaOscuro";
-            chkTemaOscuro.Size = new Size(142, 29);
-            chkTemaOscuro.TabIndex = 1;
-            chkTemaOscuro.Text = "Tema oscuro";
-            chkTemaOscuro.UseVisualStyleBackColor = true;
-            chkTemaOscuro.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(51, 92);
-            label2.Name = "label2";
-            label2.Size = new Size(186, 32);
-            label2.TabIndex = 0;
-            label2.Text = "CAMBIAR TEMA";
-            label2.Click += label2_Click_1;
             // 
             // pictureBox3
             // 
@@ -456,7 +399,7 @@
             pictureBox3.Image = Properties.Resources.LOGO_LUXELANE_removebg_preview;
             pictureBox3.Location = new Point(0, 0);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1530, 813);
+            pictureBox3.Size = new Size(1557, 813);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
@@ -465,13 +408,6 @@
             // timer1
             // 
             timer1.Tick += timer1_Tick;
-            // 
-            // notifyIcon1
-            // 
-            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
-            notifyIcon1.Text = "notifyIcon1";
-            notifyIcon1.Visible = true;
-            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
             // 
             // PrincipalLuxe
             // 
@@ -497,9 +433,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             PanelFormularios.ResumeLayout(false);
-            PanelTemas.ResumeLayout(false);
-            PanelTemas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
@@ -526,14 +459,9 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox3;
         private Label labelFecha;
-        private Button button1;
-        private Button button2;
-        private Guna.UI2.WinForms.Guna2ShadowPanel PanelTemas;
-        private CheckBox chkTemaOscuro;
-        private Label label2;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
-        private PictureBox pictureBox4;
+        private Button BtnConfiguracion;
+        private Button BtnCambiarTema;
         private Button button3;
-        private NotifyIcon notifyIcon1;
+        private Button limpiarNotisBtn;
     }
 }

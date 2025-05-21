@@ -41,24 +41,7 @@ namespace LuxeLane
             }
         }
 
-        private void AplicarTemaClaro(Control control)
-        {
-            control.BackColor = SystemColors.Control;
-            control.ForeColor = Color.Black;
-
-            foreach (Control c in control.Controls)
-                AplicarTemaClaro(c);
-
-            if (control is DataGridView dgv)
-            {
-                dgv.BackgroundColor = Color.White;
-                dgv.DefaultCellStyle.BackColor = Color.White;
-                dgv.DefaultCellStyle.ForeColor = Color.Black;
-                dgv.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
-                dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                dgv.EnableHeadersVisualStyles = false;
-            }
-        }
+      
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -66,10 +49,7 @@ namespace LuxeLane
             {
                 AplicarTemaOscuro(this);
             }
-            else
-            {
-                AplicarTemaClaro(this);
-            }
+            
         }
     }
 }

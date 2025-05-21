@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using LuxeLane.Modelos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace LuxeLane
 {
@@ -17,6 +19,10 @@ namespace LuxeLane
     {
 
         private Form _activeForm;
+        public static PrincipalLuxe _instance;
+        public System.Windows.Forms.Label lbl1;
+
+
         private void OpenChildForm(Form childForm)
         {
 
@@ -38,16 +44,31 @@ namespace LuxeLane
         public PrincipalLuxe()
         {
             InitializeComponent();
+            lbl1 = label1;
+            _instance = this;
+        }
+
+        private void PrincipalLuxe_Load(object sender, EventArgs e)
+        {
+           
+            timer1.Start();
             DeshabilitarBotones();
             this.WindowState = FormWindowState.Maximized;
             timer1.Start();
             string? userName = UserSession.UserName;
             label1.Text = userName;
+            using var dbContext = new LuxeLaneContext();
+            var notis = dbContext.Notifications.ToList();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        public void ActualizarNombreUsuario()
+        {
+            label1.Text = UserSession.UserName;
         }
 
         private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
@@ -108,7 +129,7 @@ namespace LuxeLane
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelFecha.Text = DateTime.Now.ToLongTimeString();
-            VerificarStockBajo();
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -144,6 +165,8 @@ namespace LuxeLane
                 btnStock,
                 btnUsuarios,
                 btnProductos,
+                BtnCambiarTema,
+                BtnConfiguracion,
             };
             buttons.ForEach(button => button.Enabled = false);
         }
@@ -152,44 +175,7 @@ namespace LuxeLane
         {
 
         }
-        private void AplicarTemaOscuro(Control control)
-        {
-            control.BackColor = Color.FromArgb(30, 30, 30);
-            control.ForeColor = Color.White;
-
-            foreach (Control c in control.Controls)
-                AplicarTemaOscuro(c);
-
-            if (control is DataGridView dgv)
-            {
-                dgv.BackgroundColor = Color.FromArgb(45, 45, 45);
-                dgv.DefaultCellStyle.BackColor = Color.FromArgb(45, 45, 45);
-                dgv.DefaultCellStyle.ForeColor = Color.White;
-                dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(60, 60, 60);
-                dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dgv.EnableHeadersVisualStyles = false;
-            }
-        }
-
-        private void AplicarTemaClaro(Control control)
-        {
-            control.BackColor = SystemColors.Control;
-            control.ForeColor = Color.Black;
-
-            foreach (Control c in control.Controls)
-                AplicarTemaClaro(c);
-
-            if (control is DataGridView dgv)
-            {
-                dgv.BackgroundColor = Color.White;
-                dgv.DefaultCellStyle.BackColor = Color.White;
-                dgv.DefaultCellStyle.ForeColor = Color.Black;
-                dgv.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
-                dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                dgv.EnableHeadersVisualStyles = false;
-            }
-        }
-
+       
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
@@ -197,15 +183,6 @@ namespace LuxeLane
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
-            if (chkTemaOscuro.Checked)
-            {
-                AplicarTemaOscuro(this);
-            }
-            else
-            {
-                AplicarTemaClaro(this);
-            }
         }
 
         private void chkTemaOscuro_CheckedChanged(object sender, EventArgs e)
@@ -219,13 +196,14 @@ namespace LuxeLane
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            PanelTemas.Visible = false;
+            
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
 
-            PanelTemas.Visible = true;
+            CambiarTema form = new CambiarTema();
+            form.Show();
         }
 
         private void PanelTemas_Paint(object sender, PaintEventArgs e)
@@ -238,35 +216,57 @@ namespace LuxeLane
             OpenChildForm(new Configuracion());
         }
 
-        void VerificarStockBajo()
-        {
-            using (var dbcontext = new LuxeLaneContext())
-            {
-                var bajoStock = dbcontext.Inventarios.ToList();
-
-                if (bajoStock.Any())
-                {
-                    // Mostrar notificación del sistema
-                    notifyIcon1.BalloonTipTitle = "⚠️ Alerta de Stock Bajo";
-                    notifyIcon1.BalloonTipText = $"Hay {bajoStock.Count} productos con menos de 10 unidades.";
-                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
-                    notifyIcon1.ShowBalloonTip(5000); // muestra por 5 segundos
-
-
-                }
-            }
-        }
+       
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
             MessageBox.Show("Haz clic aquí para ver los productos con stock bajo.");
-            // o abrir otro formulario con detalle
+           
         }
 
-        private void PrincipalLuxe_Load(object sender, EventArgs e)
+
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
-            VerificarStockBajo();
-            timer1.Start(); 
+            
+            using var dbContext = new LuxeLaneContext();
+            var notificationes = dbContext.Notifications.ToList();
+            if (notificationes.Any())
+            {
+                var notis = new PopupNotifier
+                {
+                    TitleText = "Notificaciones",
+                    TitleFont = new Font("Arial", 12, FontStyle.Bold),
+                    ContentFont = new Font("Arial", 10),
+                    AnimationDuration = 1000,
+                };
+                notificationes.ForEach(x => notis.ContentText += "\n" + x.Message);
+                notis.Popup();
+                return;
+            }
+
+            MessageBox.Show("No hay notificaciones pendientes.");
+
+
         }
+
+        private void limpiarNotisBtn_Click(object sender, EventArgs e)
+        {
+            using var dbContext = new LuxeLaneContext();
+            var notificationes = dbContext.Notifications.ToList();
+            foreach (var noti in notificationes)
+            {
+                dbContext.Notifications.Remove(noti);
+                dbContext.SaveChanges();
+            }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        
     }
 }

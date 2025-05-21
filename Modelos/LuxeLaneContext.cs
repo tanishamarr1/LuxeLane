@@ -19,6 +19,7 @@ public partial class LuxeLaneContext : DbContext
     public virtual DbSet<Categoria> Categorias { get; set; }
 
     public virtual DbSet<Cliente> Clientes { get; set; }
+    public virtual DbSet<Notifications> Notifications{ get; set; }
 
     public virtual DbSet<Detallefactura> Detallefacturas { get; set; }
 
@@ -58,7 +59,11 @@ public partial class LuxeLaneContext : DbContext
                 .HasColumnType("timestamp");
             entity.Property(e => e.NombreCategoria).HasMaxLength(50);
         });
-
+        modelBuilder.Entity<Notifications>(entity =>
+        {
+            entity.HasKey(x => x.Id);
+            entity.ToTable("notifications");
+        });
         modelBuilder.Entity<Cliente>(entity =>
         {
             entity.HasKey(e => e.ClienteId).HasName("PRIMARY");
@@ -99,6 +104,9 @@ public partial class LuxeLaneContext : DbContext
                 .HasForeignKey(d => d.ProductoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("detallefacturas_ibfk_2");
+
+            entity.Navigation(prod => prod.Producto)
+                .AutoInclude(); // Eager loading for Producto
         });
 
         modelBuilder.Entity<Factura>(entity =>
@@ -128,6 +136,9 @@ public partial class LuxeLaneContext : DbContext
                 .HasForeignKey(d => d.UsuarioId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("facturas_ibfk_2");
+
+            entity.Navigation(df => df.Detallefacturas)
+                  .AutoInclude(); // Eager loading for Detallefacturas
         });
 
         modelBuilder.Entity<Inventario>(entity =>
@@ -163,6 +174,7 @@ public partial class LuxeLaneContext : DbContext
             entity.HasIndex(e => e.StockId, "StockID");
 
             entity.Property(e => e.ProductoId).HasColumnName("ProductoID");
+            entity.Property(e => e.Qty);
             entity.Property(e => e.CategoriaId).HasColumnName("CategoriaID");
             entity.Property(e => e.Color).HasMaxLength(50);
             entity.Property(e => e.Descripcion).HasColumnType("text");
