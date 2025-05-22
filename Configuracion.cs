@@ -136,6 +136,34 @@ namespace LuxeLane
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            string cachePath = Path.Combine(Application.StartupPath, "Cache");
+
+            if (Directory.Exists(cachePath))
+            {
+                try
+                {
+                    Directory.Delete(cachePath, true);
+                    Directory.CreateDirectory(cachePath); 
+                    MessageBox.Show("La caché ha sido borrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al borrar la caché:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encontró la carpeta de caché.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
 
